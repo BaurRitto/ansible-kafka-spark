@@ -1,0 +1,27 @@
+---
+- name: "install kafka"
+  hosts: kafka
+  become: yes
+
+  tasks:
+  - name: download kafka
+    get_url: 
+      url: "https://downloads.apache.org/kafka/2.8.0/kafka_2.13-2.8.0.tgz"
+      dest: /home/baurzhan87/
+
+  - name: unarchive a file
+    unarchive:
+      src: /home/baurzhan87/kafka_2.13-2.8.0.tgz
+      dest: /home/baurzhan87/
+      remote_src: yes
+  
+  - name: copy script
+    copy:
+      src: /home/baurzhan87/script/fetch_data_comments.sh
+      dest: /home/baurzhan87/script/fetch_data_comments.sh
+      mode: a+x
+
+  - name: copy file_database
+    copy:
+      src: /home/baurzhan87/script/file_database.txt
+      dest: /home/baurzhan87/script/file_database.txt    

@@ -1,0 +1,6 @@
+[kafka]
+kafka    ansible_connection=ssh    ansible_user=baurzhan87    ansible_python_interpreter=/usr/bin/python3
+
+[spark]
+spark    ansible_connection=ssh    ansible_user=baurzhan87    ansible_python_interpreter=/usr/bin/python3
+spark-slave    ansible_connection=ssh    ansible_user=baurzhan87    ansible_python_interpreter=/usr/bin/python3

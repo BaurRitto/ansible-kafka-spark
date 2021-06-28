@@ -1,0 +1,9 @@
+---
+- name: "install dependencies"
+  hosts: all
+  become: yes
+  tasks:
+  - name: download java
+    apt:
+      name: default-jre
+      update_cache: yes
